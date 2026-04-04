@@ -59,11 +59,55 @@ document.querySelectorAll('.ss-tab').forEach(tab => {
   });
 });
 
-// Topology button interaction
+// Topology switcher — 7 topologies
+const topoData = {
+  mesh: {
+    title: 'Mesh Network',
+    text: 'Every agent can talk to every other agent directly. Any node can request help from any peer — no bottleneck, full redundancy. Best for collaborative problem-solving where context is shared.'
+  },
+  pipeline: {
+    title: 'Pipeline',
+    text: 'Tasks flow through a fixed sequence: Design → Code → Test → Ship. Each agent specializes in one step and passes results to the next. Best for structured workflows like CI/CD or content pipelines.'
+  },
+  star: {
+    title: 'Star (Hub & Spoke)',
+    text: 'A central orchestrator delegates tasks to all workers and collects results. Workers don\'t talk to each other — the hub coordinates everything. Best when one agent has the full picture.'
+  },
+  p2p: {
+    title: 'P2P Swarm',
+    text: 'Like freelance bidding — tasks are posted and agents compete based on capability and cost. The best-fit agent wins the job. Fully decentralized with no single point of failure.'
+  },
+  broadcast: {
+    title: 'Broadcast',
+    text: 'One sender pushes the same task to all receivers simultaneously. Useful for parallel data processing, fan-out analysis, or when you need multiple perspectives on the same problem.'
+  },
+  hierarchical: {
+    title: 'Hierarchical',
+    text: 'Tree structure with managers and workers in layers. Top-level agents break work into sub-tasks and delegate down. Each layer can use a different AI model optimized for its role.'
+  },
+  hybrid: {
+    title: 'Hybrid',
+    text: 'Combines Star + Mesh + Pipeline in a single swarm. The orchestrator delegates via star pattern, workers collaborate via mesh, and output flows through a pipeline. Maximum flexibility.'
+  }
+};
+
 document.querySelectorAll('.topo-btn').forEach(btn => {
   btn.addEventListener('click', () => {
+    const topo = btn.dataset.topo;
+    const data = topoData[topo];
+    if (!data) return;
+
     document.querySelectorAll('.topo-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
+
+    document.querySelectorAll('.topo-svg').forEach(s => s.classList.remove('active'));
+    const svg = document.getElementById('topo-' + topo);
+    if (svg) svg.classList.add('active');
+
+    const title = document.getElementById('topoTitle');
+    const text = document.getElementById('topoText');
+    if (title) title.textContent = data.title;
+    if (text) text.textContent = data.text;
   });
 });
 
@@ -84,7 +128,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Apply to cards and sections
-document.querySelectorAll('.feature-card, .sec-card, .uc-card, .download-card, .step, .ps-card, .cli-card, .budget-card').forEach(el => {
+document.querySelectorAll('.feature-card, .sec-card, .deploy-card, .download-card, .deploy-step, .budget-card, .pain-row').forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(20px)';
   el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
@@ -92,7 +136,7 @@ document.querySelectorAll('.feature-card, .sec-card, .uc-card, .download-card, .
 });
 
 // Stagger animation for grids
-document.querySelectorAll('.features-grid, .security-grid, .uc-grid, .download-grid, .cli-grid, .budget-grid').forEach(grid => {
+document.querySelectorAll('.features-grid, .security-grid, .deploy-grid, .download-grid, .budget-grid, .pain-list').forEach(grid => {
   const children = grid.children;
   Array.from(children).forEach((child, i) => {
     child.style.transitionDelay = `${i * 0.08}s`;

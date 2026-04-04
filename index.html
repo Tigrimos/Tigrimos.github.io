@@ -15,14 +15,14 @@
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="#" class="nav-logo">
-        <img src="logo.png" alt="TigrimOS" height="36">
+        <img src="logo.jpg" alt="TigrimOS" height="36">
+        <span class="nav-logo-text">TigrimOS</span>
       </a>
       <div class="nav-links" id="navLinks">
         <a href="#features">Features</a>
         <a href="#agents">Agent System</a>
-        <a href="#cli-coders">CLI Coders</a>
+        <a href="#deploy">Deploy</a>
         <a href="#security">Security</a>
-        <a href="#use-cases">Use Cases</a>
         <a href="#getting-started">Get Started</a>
       </div>
       <div class="nav-actions">
@@ -115,36 +115,126 @@
     <div class="container">
       <p class="social-proof-label">Built for teams that demand control</p>
       <div class="proof-tags">
-        <span class="proof-tag">Software Engineers</span>
+        <span class="proof-tag">Enterprise Developers</span>
+        <span class="proof-tag">Indie &amp; Solo Devs</span>
+        <span class="proof-tag">Engineering Teams</span>
+        <span class="proof-tag">Open Source Enthusiasts</span>
         <span class="proof-tag">AI Researchers</span>
-        <span class="proof-tag">DevOps Teams</span>
-        <span class="proof-tag">Enterprise IT</span>
-        <span class="proof-tag">Data Scientists</span>
-        <span class="proof-tag">Security-Conscious Orgs</span>
+        <span class="proof-tag">Regulated Industries</span>
       </div>
     </div>
   </section>
 
-  <!-- Problem / Solution -->
-  <section class="problem-solution">
+  <!-- Pain Points — Problems We Solve -->
+  <section class="painpoints" id="painpoints">
     <div class="container">
-      <div class="ps-grid">
-        <div class="ps-card ps-problem">
-          <div class="ps-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+      <div class="section-header">
+        <span class="section-tag">Sound Familiar?</span>
+        <h2>The Problems You Face Every Day</h2>
+        <p>Cloud AI tools are powerful — until they hit the wall of privacy, cost, and control.</p>
+      </div>
+      <div class="pain-list">
+        <div class="pain-row">
+          <div class="pain-problem">
+            <div class="pain-x">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </div>
+            <div>
+              <h4>Compliance blocks cloud AI</h4>
+              <p>Regulated industries can't send proprietary code, patient data, or financial records to third-party servers. No audit trail, no deal.</p>
+            </div>
           </div>
-          <h3>The Problem</h3>
-          <p>Cloud-based AI tools send your proprietary code, research data, and business logic to third-party servers. You have zero control over data privacy, API costs keep climbing, and you're locked into a single provider with no way to optimize spend per task.</p>
-        </div>
-        <div class="ps-arrow">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </div>
-        <div class="ps-card ps-solution">
-          <div class="ps-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <div class="pain-fix">
+            <div class="pain-check">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>TigrimOS runs 100% on-premise inside an isolated sandbox. Zero data leaves your machine.</span>
           </div>
-          <h3>The TigrimOS Solution</h3>
-          <p>Run powerful AI agent teams entirely on your own machine. Control your costs by choosing the appropriate LLM engine for each agent — use a premium API for critical thinking and a free local model for routine tasks. Everything executes inside a secure Ubuntu sandbox, and your host filesystem is invisible to the AI unless you explicitly share a folder.</p>
+        </div>
+        <div class="pain-row">
+          <div class="pain-problem">
+            <div class="pain-x">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </div>
+            <div>
+              <h4>API bills that spike without warning</h4>
+              <p>Multiple AI subscriptions stack up. A heavy coding session can blow through your budget overnight — and you only see it after the fact.</p>
+            </div>
+          </div>
+          <div class="pain-fix">
+            <div class="pain-check">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>Run free on local models, or mix cheap local workers with cloud orchestrators. You control every dollar.</span>
+          </div>
+        </div>
+        <div class="pain-row">
+          <div class="pain-problem">
+            <div class="pain-x">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </div>
+            <div>
+              <h4>Locked into a single AI vendor</h4>
+              <p>Team-wide Copilot or ChatGPT subscriptions add up fast. Switching providers means retraining workflows and losing integrations.</p>
+            </div>
+          </div>
+          <div class="pain-fix">
+            <div class="pain-check">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>Assign different providers per agent — OpenAI, Claude, Ollama, Codex — swap anytime, no lock-in.</span>
+          </div>
+        </div>
+        <div class="pain-row">
+          <div class="pain-problem">
+            <div class="pain-x">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </div>
+            <div>
+              <h4>No offline or air-gapped option</h4>
+              <p>Traveling, remote locations, secure facilities — cloud AI simply doesn't work when you can't connect.</p>
+            </div>
+          </div>
+          <div class="pain-fix">
+            <div class="pain-check">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>Full functionality offline with local LLMs. Works air-gapped — no internet required.</span>
+          </div>
+        </div>
+        <div class="pain-row">
+          <div class="pain-problem">
+            <div class="pain-x">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </div>
+            <div>
+              <h4>Can't customize or extend your AI tools</h4>
+              <p>Closed-source tools give you what they give you. No way to add domain-specific skills, connect internal APIs, or adapt to your workflow.</p>
+            </div>
+          </div>
+          <div class="pain-fix">
+            <div class="pain-check">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>MIT licensed. Build skills, connect MCP servers, export YAML workflows — own everything.</span>
+          </div>
+        </div>
+        <div class="pain-row">
+          <div class="pain-problem">
+            <div class="pain-x">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </div>
+            <div>
+              <h4>Hard to prove ROI to leadership</h4>
+              <p>Per-seat AI licenses for the whole team are expensive. When budgets tighten, AI tools are the first to get cut.</p>
+            </div>
+          </div>
+          <div class="pain-fix">
+            <div class="pain-check">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span>Free and open source. No per-seat fees. Deploy to the entire team at zero licensing cost.</span>
+          </div>
         </div>
       </div>
     </div>
@@ -304,123 +394,312 @@
     </div>
   </section>
 
-  <!-- Agent System -->
+  <!-- Agent System — 7 Topologies -->
   <section class="agents" id="agents">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Agent Architecture</span>
-        <h2>Swarm Intelligence, Your Way</h2>
-        <p>Design agent teams visually. Assign roles, providers, and communication patterns. Let them collaborate autonomously.</p>
+        <h2>7 Ways to Orchestrate Your Agents</h2>
+        <p>Choose the right topology for every task. Click each pattern to see how agents connect and collaborate.</p>
       </div>
-      <div class="agent-demo">
-        <div class="agent-topology">
-          <div class="topology-visual">
-            <div class="agent-node agent-orchestrator" data-label="Orchestrator">
-              <div class="agent-pulse"></div>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><line x1="12" y1="22" x2="12" y2="15.5"/><polyline points="22 8.5 12 15.5 2 8.5"/></svg>
-            </div>
-            <svg class="topology-lines" viewBox="0 0 400 300">
-              <line x1="200" y1="60" x2="80" y2="160" stroke="rgba(56,152,236,0.3)" stroke-width="2" stroke-dasharray="6,4"/>
-              <line x1="200" y1="60" x2="200" y2="180" stroke="rgba(56,152,236,0.3)" stroke-width="2" stroke-dasharray="6,4"/>
-              <line x1="200" y1="60" x2="320" y2="160" stroke="rgba(56,152,236,0.3)" stroke-width="2" stroke-dasharray="6,4"/>
-              <line x1="80" y1="160" x2="200" y2="180" stroke="rgba(56,152,236,0.15)" stroke-width="1" stroke-dasharray="4,4"/>
-              <line x1="200" y1="180" x2="320" y2="160" stroke="rgba(56,152,236,0.15)" stroke-width="1" stroke-dasharray="4,4"/>
-              <line x1="80" y1="160" x2="320" y2="160" stroke="rgba(56,152,236,0.15)" stroke-width="1" stroke-dasharray="4,4"/>
-            </svg>
-            <div class="agent-node agent-worker agent-w1" data-label="Coder">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            </div>
-            <div class="agent-node agent-worker agent-w2" data-label="Researcher">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-            <div class="agent-node agent-worker agent-w3" data-label="Reviewer">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-            </div>
-          </div>
+      <div class="topo-selector-bar">
+        <button class="topo-btn active" data-topo="mesh">Mesh</button>
+        <button class="topo-btn" data-topo="pipeline">Pipeline</button>
+        <button class="topo-btn" data-topo="star">Star</button>
+        <button class="topo-btn" data-topo="p2p">P2P Swarm</button>
+        <button class="topo-btn" data-topo="broadcast">Broadcast</button>
+        <button class="topo-btn" data-topo="hierarchical">Hierarchical</button>
+        <button class="topo-btn" data-topo="hybrid">Hybrid</button>
+      </div>
+      <div class="topo-display">
+        <div class="topo-svg-wrap">
+          <!-- Mesh: every agent connects to every other -->
+          <svg class="topo-svg active" id="topo-mesh" viewBox="0 0 480 320">
+            <defs>
+              <marker id="arrow-mesh" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="rgba(56,152,236,0.5)"/></marker>
+            </defs>
+            <!-- lines: full mesh -->
+            <line x1="240" y1="50" x2="90" y2="180" stroke="rgba(56,152,236,0.3)" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrow-mesh)"/>
+            <line x1="240" y1="50" x2="240" y2="260" stroke="rgba(56,152,236,0.3)" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrow-mesh)"/>
+            <line x1="240" y1="50" x2="390" y2="180" stroke="rgba(56,152,236,0.3)" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrow-mesh)"/>
+            <line x1="90" y1="180" x2="240" y2="260" stroke="rgba(56,152,236,0.2)" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow-mesh)"/>
+            <line x1="240" y1="260" x2="390" y2="180" stroke="rgba(56,152,236,0.2)" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow-mesh)"/>
+            <line x1="90" y1="180" x2="390" y2="180" stroke="rgba(56,152,236,0.2)" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow-mesh)"/>
+            <!-- nodes -->
+            <circle cx="240" cy="50" r="26" fill="rgba(56,152,236,0.12)" stroke="var(--accent)" stroke-width="2"/>
+            <text x="240" y="55" text-anchor="middle" fill="var(--accent)" font-size="11" font-weight="700" font-family="Inter,sans-serif">A</text>
+            <circle cx="90" cy="180" r="22" fill="rgba(56,152,236,0.08)" stroke="rgba(56,152,236,0.4)" stroke-width="1.5"/>
+            <text x="90" y="185" text-anchor="middle" fill="var(--accent-light)" font-size="11" font-weight="600" font-family="Inter,sans-serif">B</text>
+            <circle cx="240" cy="260" r="22" fill="rgba(56,152,236,0.08)" stroke="rgba(56,152,236,0.4)" stroke-width="1.5"/>
+            <text x="240" y="265" text-anchor="middle" fill="var(--accent-light)" font-size="11" font-weight="600" font-family="Inter,sans-serif">C</text>
+            <circle cx="390" cy="180" r="22" fill="rgba(56,152,236,0.08)" stroke="rgba(56,152,236,0.4)" stroke-width="1.5"/>
+            <text x="390" y="185" text-anchor="middle" fill="var(--accent-light)" font-size="11" font-weight="600" font-family="Inter,sans-serif">D</text>
+            <!-- labels -->
+            <text x="240" y="88" text-anchor="middle" fill="var(--text-dim)" font-size="10" font-family="Inter,sans-serif">Orchestrator</text>
+            <text x="90" y="214" text-anchor="middle" fill="var(--text-dim)" font-size="10" font-family="Inter,sans-serif">Coder</text>
+            <text x="240" y="294" text-anchor="middle" fill="var(--text-dim)" font-size="10" font-family="Inter,sans-serif">Researcher</text>
+            <text x="390" y="214" text-anchor="middle" fill="var(--text-dim)" font-size="10" font-family="Inter,sans-serif">Reviewer</text>
+            <!-- caption -->
+            <text x="240" y="18" text-anchor="middle" fill="var(--text-muted)" font-size="10" font-weight="600" font-family="Inter,sans-serif" letter-spacing="0.05em">EVERY AGENT CAN REQUEST ANY OTHER FOR HELP</text>
+          </svg>
+
+          <!-- Pipeline: sequential route -->
+          <svg class="topo-svg" id="topo-pipeline" viewBox="0 0 480 320">
+            <defs>
+              <marker id="arrow-pipe" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="rgba(56,152,236,0.5)"/></marker>
+            </defs>
+            <line x1="72" y1="160" x2="163" y2="160" stroke="rgba(56,152,236,0.4)" stroke-width="2" marker-end="url(#arrow-pipe)"/>
+            <line x1="208" y1="160" x2="299" y2="160" stroke="rgba(56,152,236,0.4)" stroke-width="2" marker-end="url(#arrow-pipe)"/>
+            <line x1="344" y1="160" x2="435" y2="160" stroke="rgba(34,197,94,0.5)" stroke-width="2" marker-end="url(#arrow-pipe)"/>
+            <!-- nodes -->
+            <circle cx="50" cy="160" r="22" fill="rgba(56,152,236,0.12)" stroke="var(--accent)" stroke-width="2"/>
+            <text x="50" y="164" text-anchor="middle" fill="var(--accent)" font-size="10" font-weight="700" font-family="Inter,sans-serif">Plan</text>
+            <circle cx="186" cy="160" r="22" fill="rgba(56,152,236,0.08)" stroke="rgba(56,152,236,0.4)" stroke-width="1.5"/>
+            <text x="186" y="164" text-anchor="middle" fill="var(--accent-light)" font-size="10" font-weight="600" font-family="Inter,sans-serif">Code</text>
+            <circle cx="322" cy="160" r="22" fill="rgba(56,152,236,0.08)" stroke="rgba(56,152,236,0.4)" stroke-width="1.5"/>
+            <text x="322" y="164" text-anchor="middle" fill="var(--accent-light)" font-size="10" font-weight="600" font-family="Inter,sans-serif">Test</text>
+            <circle cx="458" cy="160" r="22" fill="rgba(34,197,94,0.12)" stroke="var(--success)" stroke-width="2"/>
+            <text x="458" y="164" text-anchor="middle" fill="var(--success)" font-size="10" font-weight="700" font-family="Inter,sans-serif">Ship</text>
+            <!-- labels -->
+            <text x="50" y="196" text-anchor="middle" fill="var(--text-dim)" font-size="10" font-family="Inter,sans-serif">Design</text>
+            <text x="186" y="196" text-anchor="middle" fill="var(--text-dim)" font-size="10" font-family="Inter,sans-serif">Implement</text>
+            <text x="322" y="196" text-anchor="middle" fill="var(--text-dim)" font-size="10" font-family="Inter,sans-serif">Review</text>
+            <text x="458" y="196" text-anchor="middle" fill="var(--text-dim)" font-size="10" font-family="Inter,sans-serif">Deploy</text>
+            <text x="240" y="100" text-anchor="middle" fill="var(--text-muted)" font-size="10" font-weight="600" font-family="Inter,sans-serif" letter-spacing="0.05em">ONE ROUTE: DESIGN &rarr; CODE &rarr; CHECK &rarr; SHIP</text>
+          </svg>
+
+          <!-- Star: central hub -->
+          <svg class="topo-svg" id="topo-star" viewBox="0 0 480 320">
+            <defs>
+              <marker id="arrow-star" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="rgba(56,152,236,0.5)"/></marker>
+            </defs>
+            <line x1="240" y1="160" x2="108" y2="62" stroke="rgba(56,152,236,0.35)" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow-star)"/>
+            <line x1="240" y1="160" x2="372" y2="62" stroke="rgba(56,152,236,0.35)" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow-star)"/>
+            <line x1="240" y1="160" x2="70" y2="220" stroke="rgba(56,152,236,0.35)" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow-star)"/>
+            <line x1="240" y1="160" x2="240" y2="280" stroke="rgba(56,152,236,0.35)" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow-star)"/>
+            <line x1="240" y1="160" x2="410" y2="220" stroke="rgba(56,152,236,0.35)" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow-star)"/>
+            <!-- center -->
+            <circle cx="240" cy="160" r="30" fill="rgba(56,152,236,0.15)" stroke="var(--accent)" stroke-width="2.5"/>
+            <text x="240" y="164" text-anchor="middle" fill="var(--accent)" font-size="10" font-weight="800" font-family="Inter,sans-serif">HUB</text>
+            <!-- spokes -->
+            <circle cx="90" cy="50" r="20" fill="rgba(56,152,236,0.08)" stroke="rgba(56,152,236,0.4)" stroke-width="1.5"/>
+            <text x="90" y="54" text-anchor="middle" fill="var(--accent-light)" font-size="9" font-weight="600" font-family="Inter,sans-serif">W1</text>
+            <circle cx="390" cy="50" r="20" fill="rgba(56,152,236,0.08)" stroke="rgba(56,152,236,0.4)" stroke-width="1.5"/>
+            <text x="390" y="54" text-anchor="middle" fill="var(--accent-light)" font-size="9" font-weight="600" font-family="Inter,sans-serif">W2</text>
+            <circle cx="50" cy="230" r="20" fill="rgba(56,152,236,0.08)" stroke="rgba(56,152,236,0.4)" stroke-width="1.5"/>
+            <text x="50" y="234" text-anchor="middle" fill="var(--accent-light)" font-size="9" font-weight="600" font-family="Inter,sans-serif">W3</text>
+            <circle cx="240" cy="290" r="20" fill="rgba(56,152,236,0.08)" stroke="rgba(56,152,236,0.4)" stroke-width="1.5"/>
+            <text x="240" y="294" text-anchor="middle" fill="var(--accent-light)" font-size="9" font-weight="600" font-family="Inter,sans-serif">W4</text>
+            <circle cx="430" cy="230" r="20" fill="rgba(56,152,236,0.08)" stroke="rgba(56,152,236,0.4)" stroke-width="1.5"/>
+            <text x="430" y="234" text-anchor="middle" fill="var(--accent-light)" font-size="9" font-weight="600" font-family="Inter,sans-serif">W5</text>
+            <text x="240" y="18" text-anchor="middle" fill="var(--text-muted)" font-size="10" font-weight="600" font-family="Inter,sans-serif" letter-spacing="0.05em">CENTRAL HUB DELEGATES TO ALL WORKERS</text>
+          </svg>
+
+          <!-- P2P Swarm: freelance bidding -->
+          <svg class="topo-svg" id="topo-p2p" viewBox="0 0 480 320">
+            <!-- bid arrows (curved) -->
+            <path d="M120,100 Q200,60 280,100" fill="none" stroke="rgba(129,140,248,0.35)" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <path d="M280,100 Q360,60 400,140" fill="none" stroke="rgba(129,140,248,0.35)" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <path d="M400,140 Q420,220 340,240" fill="none" stroke="rgba(34,197,94,0.4)" stroke-width="2"/>
+            <path d="M140,240 Q80,200 80,140" fill="none" stroke="rgba(129,140,248,0.35)" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <path d="M80,140 Q90,100 120,100" fill="none" stroke="rgba(129,140,248,0.35)" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <path d="M140,240 Q200,280 340,240" fill="none" stroke="rgba(56,152,236,0.3)" stroke-width="1.5" stroke-dasharray="5,4"/>
+            <path d="M240,170 Q180,200 140,240" fill="none" stroke="rgba(56,152,236,0.25)" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <path d="M240,170 Q300,200 340,240" fill="none" stroke="rgba(56,152,236,0.25)" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <!-- task box -->
+            <rect x="195" y="40" width="90" height="28" rx="6" fill="rgba(129,140,248,0.1)" stroke="rgba(129,140,248,0.3)" stroke-width="1"/>
+            <text x="240" y="58" text-anchor="middle" fill="var(--gradient-end)" font-size="10" font-weight="700" font-family="Inter,sans-serif">TASK</text>
+            <!-- nodes -->
+            <circle cx="100" cy="100" r="20" fill="rgba(56,152,236,0.08)" stroke="rgba(56,152,236,0.4)" stroke-width="1.5"/>
+            <text x="100" y="104" text-anchor="middle" fill="var(--accent-light)" font-size="9" font-weight="600" font-family="Inter,sans-serif">A</text>
+            <text x="100" y="134" text-anchor="middle" fill="var(--text-dim)" font-size="9" font-family="Inter,sans-serif">bid $2</text>
+            <circle cx="280" cy="100" r="20" fill="rgba(56,152,236,0.08)" stroke="rgba(56,152,236,0.4)" stroke-width="1.5"/>
+            <text x="280" y="104" text-anchor="middle" fill="var(--accent-light)" font-size="9" font-weight="600" font-family="Inter,sans-serif">B</text>
+            <text x="280" y="134" text-anchor="middle" fill="var(--text-dim)" font-size="9" font-family="Inter,sans-serif">bid $5</text>
+            <circle cx="400" cy="140" r="20" fill="rgba(56,152,236,0.08)" stroke="rgba(56,152,236,0.4)" stroke-width="1.5"/>
+            <text x="400" y="144" text-anchor="middle" fill="var(--accent-light)" font-size="9" font-weight="600" font-family="Inter,sans-serif">C</text>
+            <text x="400" y="174" text-anchor="middle" fill="var(--text-dim)" font-size="9" font-family="Inter,sans-serif">bid $1</text>
+            <circle cx="240" cy="170" r="20" fill="rgba(56,152,236,0.08)" stroke="rgba(56,152,236,0.4)" stroke-width="1.5"/>
+            <text x="240" y="174" text-anchor="middle" fill="var(--accent-light)" font-size="9" font-weight="600" font-family="Inter,sans-serif">D</text>
+            <text x="240" y="204" text-anchor="middle" fill="var(--text-dim)" font-size="9" font-family="Inter,sans-serif">bid $3</text>
+            <!-- winner -->
+            <circle cx="340" cy="240" r="22" fill="rgba(34,197,94,0.12)" stroke="var(--success)" stroke-width="2"/>
+            <text x="340" y="244" text-anchor="middle" fill="var(--success)" font-size="9" font-weight="700" font-family="Inter,sans-serif">WIN</text>
+            <text x="340" y="276" text-anchor="middle" fill="var(--success)" font-size="9" font-family="Inter,sans-serif">C wins task</text>
+            <circle cx="140" cy="240" r="20" fill="rgba(56,152,236,0.06)" stroke="rgba(56,152,236,0.2)" stroke-width="1.5"/>
+            <text x="140" y="244" text-anchor="middle" fill="var(--text-dim)" font-size="9" font-weight="600" font-family="Inter,sans-serif">E</text>
+            <text x="240" y="18" text-anchor="middle" fill="var(--text-muted)" font-size="10" font-weight="600" font-family="Inter,sans-serif" letter-spacing="0.05em">AGENTS BID ON TASKS &mdash; BEST FIT WINS THE JOB</text>
+          </svg>
+
+          <!-- Broadcast: one to all -->
+          <svg class="topo-svg" id="topo-broadcast" viewBox="0 0 480 320">
+            <defs>
+              <marker id="arrow-bc" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="rgba(56,152,236,0.5)"/></marker>
+            </defs>
+            <!-- broadcast lines -->
+            <line x1="120" y1="160" x2="260" y2="60" stroke="rgba(56,152,236,0.4)" stroke-width="2" marker-end="url(#arrow-bc)"/>
+            <line x1="120" y1="160" x2="280" y2="130" stroke="rgba(56,152,236,0.4)" stroke-width="2" marker-end="url(#arrow-bc)"/>
+            <line x1="120" y1="160" x2="280" y2="190" stroke="rgba(56,152,236,0.4)" stroke-width="2" marker-end="url(#arrow-bc)"/>
+            <line x1="120" y1="160" x2="260" y2="260" stroke="rgba(56,152,236,0.4)" stroke-width="2" marker-end="url(#arrow-bc)"/>
+            <!-- broadcast rings -->
+            <circle cx="120" cy="160" r="50" fill="none" stroke="rgba(56,152,236,0.08)" stroke-width="1"/>
+            <circle cx="120" cy="160" r="80" fill="none" stroke="rgba(56,152,236,0.05)" stroke-width="1"/>
+            <!-- sender -->
+            <circle cx="120" cy="160" r="28" fill="rgba(56,152,236,0.15)" stroke="var(--accent)" stroke-width="2.5"/>
+            <text x="120" y="156" text-anchor="middle" fill="var(--accent)" font-size="9" font-weight="800" font-family="Inter,sans-serif">SEND</text>
+            <text x="120" y="170" text-anchor="middle" fill="var(--accent)" font-size="8" font-family="Inter,sans-serif">to all</text>
+            <!-- receivers -->
+            <circle cx="280" cy="50" r="20" fill="rgba(56,152,236,0.08)" stroke="rgba(56,152,236,0.4)" stroke-width="1.5"/>
+            <text x="280" y="54" text-anchor="middle" fill="var(--accent-light)" font-size="9" font-weight="600" font-family="Inter,sans-serif">R1</text>
+            <circle cx="300" cy="125" r="20" fill="rgba(56,152,236,0.08)" stroke="rgba(56,152,236,0.4)" stroke-width="1.5"/>
+            <text x="300" y="129" text-anchor="middle" fill="var(--accent-light)" font-size="9" font-weight="600" font-family="Inter,sans-serif">R2</text>
+            <circle cx="300" cy="195" r="20" fill="rgba(56,152,236,0.08)" stroke="rgba(56,152,236,0.4)" stroke-width="1.5"/>
+            <text x="300" y="199" text-anchor="middle" fill="var(--accent-light)" font-size="9" font-weight="600" font-family="Inter,sans-serif">R3</text>
+            <circle cx="280" cy="270" r="20" fill="rgba(56,152,236,0.08)" stroke="rgba(56,152,236,0.4)" stroke-width="1.5"/>
+            <text x="280" y="274" text-anchor="middle" fill="var(--accent-light)" font-size="9" font-weight="600" font-family="Inter,sans-serif">R4</text>
+            <text x="240" y="18" text-anchor="middle" fill="var(--text-muted)" font-size="10" font-weight="600" font-family="Inter,sans-serif" letter-spacing="0.05em">ONE AGENT SENDS THE SAME TASK TO ALL</text>
+          </svg>
+
+          <!-- Hierarchical: tree layers -->
+          <svg class="topo-svg" id="topo-hierarchical" viewBox="0 0 480 320">
+            <defs>
+              <marker id="arrow-hier" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="rgba(56,152,236,0.5)"/></marker>
+            </defs>
+            <!-- tier 1 to tier 2 -->
+            <line x1="240" y1="68" x2="140" y2="140" stroke="rgba(56,152,236,0.4)" stroke-width="2" marker-end="url(#arrow-hier)"/>
+            <line x1="240" y1="68" x2="340" y2="140" stroke="rgba(56,152,236,0.4)" stroke-width="2" marker-end="url(#arrow-hier)"/>
+            <!-- tier 2 to tier 3 -->
+            <line x1="120" y1="170" x2="60" y2="240" stroke="rgba(56,152,236,0.3)" stroke-width="1.5" marker-end="url(#arrow-hier)"/>
+            <line x1="120" y1="170" x2="180" y2="240" stroke="rgba(56,152,236,0.3)" stroke-width="1.5" marker-end="url(#arrow-hier)"/>
+            <line x1="360" y1="170" x2="300" y2="240" stroke="rgba(56,152,236,0.3)" stroke-width="1.5" marker-end="url(#arrow-hier)"/>
+            <line x1="360" y1="170" x2="420" y2="240" stroke="rgba(56,152,236,0.3)" stroke-width="1.5" marker-end="url(#arrow-hier)"/>
+            <!-- tier labels -->
+            <rect x="430" y="40" width="44" height="20" rx="4" fill="rgba(56,152,236,0.08)"/>
+            <text x="452" y="54" text-anchor="middle" fill="var(--text-dim)" font-size="8" font-weight="600" font-family="Inter,sans-serif">CEO</text>
+            <rect x="430" y="142" width="44" height="20" rx="4" fill="rgba(56,152,236,0.06)"/>
+            <text x="452" y="156" text-anchor="middle" fill="var(--text-dim)" font-size="8" font-weight="600" font-family="Inter,sans-serif">LEAD</text>
+            <rect x="430" y="244" width="44" height="20" rx="4" fill="rgba(56,152,236,0.04)"/>
+            <text x="452" y="258" text-anchor="middle" fill="var(--text-dim)" font-size="8" font-weight="600" font-family="Inter,sans-serif">WORKER</text>
+            <!-- nodes -->
+            <circle cx="240" cy="50" r="24" fill="rgba(56,152,236,0.15)" stroke="var(--accent)" stroke-width="2.5"/>
+            <text x="240" y="55" text-anchor="middle" fill="var(--accent)" font-size="10" font-weight="800" font-family="Inter,sans-serif">M</text>
+            <circle cx="120" cy="155" r="20" fill="rgba(56,152,236,0.1)" stroke="rgba(56,152,236,0.5)" stroke-width="2"/>
+            <text x="120" y="159" text-anchor="middle" fill="var(--accent-light)" font-size="10" font-weight="700" font-family="Inter,sans-serif">L1</text>
+            <circle cx="360" cy="155" r="20" fill="rgba(56,152,236,0.1)" stroke="rgba(56,152,236,0.5)" stroke-width="2"/>
+            <text x="360" y="159" text-anchor="middle" fill="var(--accent-light)" font-size="10" font-weight="700" font-family="Inter,sans-serif">L2</text>
+            <circle cx="60" cy="255" r="18" fill="rgba(56,152,236,0.06)" stroke="rgba(56,152,236,0.3)" stroke-width="1.5"/>
+            <text x="60" y="259" text-anchor="middle" fill="var(--accent-light)" font-size="9" font-weight="600" font-family="Inter,sans-serif">W1</text>
+            <circle cx="180" cy="255" r="18" fill="rgba(56,152,236,0.06)" stroke="rgba(56,152,236,0.3)" stroke-width="1.5"/>
+            <text x="180" y="259" text-anchor="middle" fill="var(--accent-light)" font-size="9" font-weight="600" font-family="Inter,sans-serif">W2</text>
+            <circle cx="300" cy="255" r="18" fill="rgba(56,152,236,0.06)" stroke="rgba(56,152,236,0.3)" stroke-width="1.5"/>
+            <text x="300" y="259" text-anchor="middle" fill="var(--accent-light)" font-size="9" font-weight="600" font-family="Inter,sans-serif">W3</text>
+            <circle cx="420" cy="255" r="18" fill="rgba(56,152,236,0.06)" stroke="rgba(56,152,236,0.3)" stroke-width="1.5"/>
+            <text x="420" y="259" text-anchor="middle" fill="var(--accent-light)" font-size="9" font-weight="600" font-family="Inter,sans-serif">W4</text>
+            <text x="240" y="18" text-anchor="middle" fill="var(--text-muted)" font-size="10" font-weight="600" font-family="Inter,sans-serif" letter-spacing="0.05em">TREE LAYERS &mdash; MANAGERS DELEGATE DOWN</text>
+          </svg>
+
+          <!-- Hybrid: combined patterns -->
+          <svg class="topo-svg" id="topo-hybrid" viewBox="0 0 480 320">
+            <defs>
+              <marker id="arrow-hyb" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="rgba(56,152,236,0.5)"/></marker>
+            </defs>
+            <!-- star from orchestrator -->
+            <line x1="240" y1="70" x2="100" y2="140" stroke="rgba(56,152,236,0.4)" stroke-width="2" marker-end="url(#arrow-hyb)"/>
+            <line x1="240" y1="70" x2="380" y2="140" stroke="rgba(56,152,236,0.4)" stroke-width="2" marker-end="url(#arrow-hyb)"/>
+            <line x1="240" y1="70" x2="240" y2="170" stroke="rgba(56,152,236,0.4)" stroke-width="2" marker-end="url(#arrow-hyb)"/>
+            <!-- pipeline at bottom -->
+            <line x1="122" y1="250" x2="195" y2="250" stroke="rgba(34,197,94,0.5)" stroke-width="2" marker-end="url(#arrow-hyb)"/>
+            <line x1="260" y1="250" x2="333" y2="250" stroke="rgba(34,197,94,0.5)" stroke-width="2" marker-end="url(#arrow-hyb)"/>
+            <!-- mesh among workers -->
+            <line x1="100" y1="155" x2="100" y2="230" stroke="rgba(129,140,248,0.3)" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <line x1="240" y1="185" x2="240" y2="230" stroke="rgba(129,140,248,0.3)" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <line x1="380" y1="155" x2="360" y2="230" stroke="rgba(129,140,248,0.3)" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <line x1="100" y1="145" x2="380" y2="145" stroke="rgba(129,140,248,0.15)" stroke-width="1" stroke-dasharray="4,4"/>
+            <!-- zone labels -->
+            <rect x="10" y="100" width="42" height="18" rx="4" fill="rgba(56,152,236,0.08)"/>
+            <text x="31" y="113" text-anchor="middle" fill="var(--accent)" font-size="7" font-weight="700" font-family="Inter,sans-serif">STAR</text>
+            <rect x="10" y="230" width="52" height="18" rx="4" fill="rgba(34,197,94,0.08)"/>
+            <text x="36" y="243" text-anchor="middle" fill="var(--success)" font-size="7" font-weight="700" font-family="Inter,sans-serif">PIPELINE</text>
+            <rect x="418" y="125" width="48" height="18" rx="4" fill="rgba(129,140,248,0.08)"/>
+            <text x="442" y="138" text-anchor="middle" fill="var(--gradient-end)" font-size="7" font-weight="700" font-family="Inter,sans-serif">MESH</text>
+            <!-- nodes -->
+            <circle cx="240" cy="55" r="24" fill="rgba(56,152,236,0.15)" stroke="var(--accent)" stroke-width="2.5"/>
+            <text x="240" y="59" text-anchor="middle" fill="var(--accent)" font-size="9" font-weight="800" font-family="Inter,sans-serif">ORCH</text>
+            <circle cx="100" cy="140" r="18" fill="rgba(56,152,236,0.08)" stroke="rgba(56,152,236,0.4)" stroke-width="1.5"/>
+            <text x="100" y="144" text-anchor="middle" fill="var(--accent-light)" font-size="9" font-weight="600" font-family="Inter,sans-serif">A</text>
+            <circle cx="240" cy="180" r="18" fill="rgba(56,152,236,0.08)" stroke="rgba(56,152,236,0.4)" stroke-width="1.5"/>
+            <text x="240" y="184" text-anchor="middle" fill="var(--accent-light)" font-size="9" font-weight="600" font-family="Inter,sans-serif">B</text>
+            <circle cx="380" cy="140" r="18" fill="rgba(56,152,236,0.08)" stroke="rgba(56,152,236,0.4)" stroke-width="1.5"/>
+            <text x="380" y="144" text-anchor="middle" fill="var(--accent-light)" font-size="9" font-weight="600" font-family="Inter,sans-serif">C</text>
+            <circle cx="100" cy="250" r="18" fill="rgba(34,197,94,0.08)" stroke="rgba(34,197,94,0.4)" stroke-width="1.5"/>
+            <text x="100" y="254" text-anchor="middle" fill="var(--success)" font-size="9" font-weight="600" font-family="Inter,sans-serif">P1</text>
+            <circle cx="240" cy="250" r="18" fill="rgba(34,197,94,0.08)" stroke="rgba(34,197,94,0.4)" stroke-width="1.5"/>
+            <text x="240" y="254" text-anchor="middle" fill="var(--success)" font-size="9" font-weight="600" font-family="Inter,sans-serif">P2</text>
+            <circle cx="360" cy="250" r="18" fill="rgba(34,197,94,0.08)" stroke="rgba(34,197,94,0.4)" stroke-width="1.5"/>
+            <text x="360" y="254" text-anchor="middle" fill="var(--success)" font-size="9" font-weight="600" font-family="Inter,sans-serif">P3</text>
+            <text x="240" y="18" text-anchor="middle" fill="var(--text-muted)" font-size="10" font-weight="600" font-family="Inter,sans-serif" letter-spacing="0.05em">COMBINES STAR + MESH + PIPELINE IN ONE SWARM</text>
+          </svg>
         </div>
-        <div class="agent-info">
-          <div class="topology-selector">
-            <button class="topo-btn active" data-topo="mesh">Mesh</button>
-            <button class="topo-btn" data-topo="pipeline">Pipeline</button>
-            <button class="topo-btn" data-topo="star">Star</button>
-            <button class="topo-btn" data-topo="broadcast">Broadcast</button>
-          </div>
-          <h3>7 Orchestration Topologies</h3>
-          <p>From simple pipelines to full mesh P2P swarms. Each agent can use a different AI model, communicate through 4 protocols, and share state through a governance layer.</p>
-          <div class="agent-features">
-            <div class="af-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Visual drag-and-drop agent editor</span>
-            </div>
-            <div class="af-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>YAML export for version control</span>
-            </div>
-            <div class="af-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Live Minecraft-style task monitor</span>
-            </div>
-            <div class="af-item">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Mix OpenAI, Claude, Codex, local LLMs per agent</span>
-            </div>
-          </div>
+        <div class="topo-desc" id="topoDesc">
+          <h3 id="topoTitle">Mesh Network</h3>
+          <p id="topoText">Every agent can talk to every other agent directly. Any node can request help from any peer — no bottleneck, full redundancy. Best for collaborative problem-solving where context is shared.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CLI Agent Coders -->
-  <section class="cli-coders" id="cli-coders">
+  <!-- Deploy Agentic AI to Your Organization -->
+  <section class="deploy" id="deploy">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Power Tools</span>
-        <h2>Claude Code & Codex as Agent Coders</h2>
-        <p>Assign industry-leading CLI tools as autonomous coders inside your agent swarm. Each runs its own tool loop — reading, editing, testing, and iterating on code independently.</p>
+        <span class="section-tag">Web Service Deploy</span>
+        <h2>Deploy Agentic AI to Your Organization</h2>
+        <p>Set up TigrimOS as a self-hosted web application. Give every team autonomous AI agents — from business ops to R&D — all on your own infrastructure.</p>
       </div>
-      <div class="cli-grid">
-        <div class="cli-card">
-          <div class="cli-header">
-            <div class="cli-badge">Claude Code CLI</div>
+      <div class="deploy-grid">
+        <div class="deploy-card">
+          <div class="deploy-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           </div>
-          <div class="cli-models">
-            <div class="cli-model"><code>claude-code</code><span>Default model</span></div>
-            <div class="cli-model"><code>claude-code:sonnet</code><span>Sonnet model</span></div>
-            <div class="cli-model"><code>claude-code:opus</code><span>Opus model</span></div>
-          </div>
-          <div class="cli-setup">
-            <div class="code-header">
-              <span class="code-dot red"></span>
-              <span class="code-dot yellow"></span>
-              <span class="code-dot green"></span>
-              <span class="code-title">Terminal setup</span>
-            </div>
-            <pre><code>npm i -g @anthropic-ai/claude-code
-claude login</code></pre>
-          </div>
+          <h3>Software Development</h3>
+          <p>Agent teams that code, review, test, and deploy in parallel. Claude Code + Codex CLI as autonomous coders inside your swarm.</p>
         </div>
-        <div class="cli-card">
-          <div class="cli-header">
-            <div class="cli-badge cli-badge-alt">Codex CLI</div>
+        <div class="deploy-card">
+          <div class="deploy-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
           </div>
-          <div class="cli-models">
-            <div class="cli-model"><code>codex</code><span>Default model</span></div>
-            <div class="cli-model"><code>codex:o3</code><span>o3 model</span></div>
-            <div class="cli-model"><code>codex:o4-mini</code><span>o4-mini model</span></div>
+          <h3>Research & Data Science</h3>
+          <p>Run experiments, analyze data, and synthesize literature with full Python/numpy/pandas. Sensitive data never leaves your servers.</p>
+        </div>
+        <div class="deploy-card">
+          <div class="deploy-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
-          <div class="cli-setup">
-            <div class="code-header">
-              <span class="code-dot red"></span>
-              <span class="code-dot yellow"></span>
-              <span class="code-dot green"></span>
-              <span class="code-title">Terminal setup</span>
-            </div>
-            <pre><code>npm i -g @openai/codex
-codex login --device-auth</code></pre>
+          <h3>Business & Management</h3>
+          <p>Automate reports, process documents, and run strategic analysis. AI agents handle routine work so your team focuses on decisions.</p>
+        </div>
+        <div class="deploy-card">
+          <div class="deploy-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
           </div>
+          <h3>Tech Company & Enterprise</h3>
+          <p>Full data sovereignty, air-gapped deployments, and org-wide skill sharing. MIT licensed — no vendor lock-in, no per-seat fees.</p>
         </div>
       </div>
-      <p class="cli-note">All CLI tools run <strong>inside the sandbox</strong> — they cannot access your host system. Mix them in a multi-agent swarm: e.g. <code>claude-code:opus</code> for architecture + <code>codex:o3</code> for implementation.</p>
+      <div class="deploy-steps">
+        <div class="deploy-step">
+          <div class="step-number">1</div>
+          <span>Download & launch — sandbox provisions automatically</span>
+        </div>
+        <div class="deploy-step">
+          <div class="step-number">2</div>
+          <span>Connect AI models — cloud APIs, local LLMs, or both</span>
+        </div>
+        <div class="deploy-step">
+          <div class="step-number">3</div>
+          <span>Design agent teams — visual editor, YAML export, ship faster</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -429,7 +708,7 @@ codex login --device-auth</code></pre>
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Zero Trust</span>
-        <h2>Security That's Not an Afterthought</h2>
+        <h2>Secure by Design</h2>
         <p>Every AI operation runs inside an isolated Ubuntu sandbox. Your host system is protected by default.</p>
       </div>
       <div class="security-grid">
@@ -438,217 +717,28 @@ codex login --device-auth</code></pre>
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <h4>Full Sandbox Isolation</h4>
-          <p>macOS: Apple Virtualization.framework VM. Windows: WSL2 distro. AI code physically cannot access your host.</p>
+          <p>macOS: Virtualization.framework VM. Windows: WSL2. AI code physically cannot access your host.</p>
         </div>
         <div class="sec-card">
           <div class="sec-icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
           </div>
           <h4>Invisible by Default</h4>
-          <p>Your files are completely hidden from the AI. Share only what you choose, with read-only as the default permission.</p>
+          <p>Host files hidden from AI. Share only what you choose — read-only by default.</p>
         </div>
         <div class="sec-card">
           <div class="sec-icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
           </div>
           <h4>NAT Networking</h4>
-          <p>The sandbox is isolated from your host network. No unexpected outbound connections from AI processes.</p>
+          <p>Sandbox isolated from host network. No unexpected outbound connections.</p>
         </div>
         <div class="sec-card">
           <div class="sec-icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
           </div>
           <h4>No Docker Required</h4>
-          <p>Native OS-level virtualization on both platforms. Lighter, faster, and no dependency on Docker daemon or containers.</p>
-        </div>
-      </div>
-      <div class="security-table-wrap">
-        <table class="security-table">
-          <thead>
-            <tr>
-              <th>Security Layer</th>
-              <th>macOS</th>
-              <th>Windows</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Sandbox</td>
-              <td>Ubuntu VM via Virtualization.framework</td>
-              <td>Ubuntu via WSL2</td>
-            </tr>
-            <tr>
-              <td>File System</td>
-              <td>Host files invisible by default</td>
-              <td>Host files invisible by default</td>
-            </tr>
-            <tr>
-              <td>Shared Folders</td>
-              <td>VirtioFS opt-in, read-only default</td>
-              <td>Symlink opt-in via app UI</td>
-            </tr>
-            <tr>
-              <td>Network</td>
-              <td>NAT — VM isolated</td>
-              <td>WSL2 NAT — isolated</td>
-            </tr>
-            <tr>
-              <td>Process Isolation</td>
-              <td>VM cannot see host processes</td>
-              <td>WSL2 isolated from Windows</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- Use Cases -->
-  <section class="use-cases" id="use-cases">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Who It's For</span>
-        <h2>Your Team, Supercharged</h2>
-        <p>Whether you're a solo developer, research lab, or enterprise IT — TigrimOS gives you AI agents that work on your terms.</p>
-      </div>
-      <div class="uc-grid">
-        <div class="uc-card">
-          <div class="uc-header">
-            <div class="uc-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            </div>
-            <h3>Developers</h3>
-          </div>
-          <p>Deploy agent teams that write, test, and review code in parallel. Each agent specializes — one codes, one reviews, one writes tests. All running locally with your preferred models.</p>
-          <ul class="uc-list">
-            <li>Parallel code generation & review</li>
-            <li>Automated test writing</li>
-            <li>Multi-model agent pipelines</li>
-            <li>YAML-exportable workflows for CI/CD</li>
-          </ul>
-        </div>
-        <div class="uc-card">
-          <div class="uc-header">
-            <div class="uc-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-            </div>
-            <h3>Researchers</h3>
-          </div>
-          <p>Run data analysis, literature synthesis, and experiment automation with full Python/numpy/pandas support. Keep sensitive research data on your own hardware.</p>
-          <ul class="uc-list">
-            <li>Python with scientific stack included</li>
-            <li>Multi-agent literature review</li>
-            <li>Chart & visualization rendering</li>
-            <li>Checkpoint recovery for long experiments</li>
-          </ul>
-        </div>
-        <div class="uc-card">
-          <div class="uc-header">
-            <div class="uc-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            </div>
-            <h3>Enterprise & Business</h3>
-          </div>
-          <p>Deploy AI capabilities without sending proprietary data to third-party clouds. Full control over models, data flow, and compliance. MIT licensed — no vendor lock-in.</p>
-          <ul class="uc-list">
-            <li>Data sovereignty — everything stays in-house</li>
-            <li>Use local LLMs for air-gapped environments</li>
-            <li>Skills marketplace for org-wide sharing</li>
-            <li>Cross-platform: macOS & Windows teams</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How It Works -->
-  <section class="how-it-works">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">How It Works</span>
-        <h2>From Download to Agent Team in Minutes</h2>
-      </div>
-      <div class="steps">
-        <div class="step">
-          <div class="step-number">1</div>
-          <div class="step-content">
-            <h3>Download & Launch</h3>
-            <p>Grab the app for your platform. First launch provisions a secure Ubuntu sandbox automatically.</p>
-          </div>
-        </div>
-        <div class="step-connector"></div>
-        <div class="step">
-          <div class="step-number">2</div>
-          <div class="step-content">
-            <h3>Connect Your Models</h3>
-            <p>Enter your API keys or point to local LLMs. Mix and match providers per agent — OpenAI, Claude, Ollama, llama.cpp.</p>
-          </div>
-        </div>
-        <div class="step-connector"></div>
-        <div class="step">
-          <div class="step-number">3</div>
-          <div class="step-content">
-            <h3>Design Your Agent Team</h3>
-            <p>Use the visual editor to create agent workflows. Assign roles, topologies, and communication patterns.</p>
-          </div>
-        </div>
-        <div class="step-connector"></div>
-        <div class="step">
-          <div class="step-number">4</div>
-          <div class="step-content">
-            <h3>Ship Faster</h3>
-            <p>Your agents collaborate in parallel — coding, reviewing, testing, and documenting — while you focus on what matters.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Tech Specs -->
-  <section class="tech-specs">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Under the Hood</span>
-        <h2>Built on Solid Foundations</h2>
-      </div>
-      <div class="specs-grid">
-        <div class="spec-group">
-          <h4>Runtime</h4>
-          <div class="spec-items">
-            <span class="spec-chip">Node.js 20</span>
-            <span class="spec-chip">Python 3</span>
-            <span class="spec-chip">Fastify</span>
-            <span class="spec-chip">Ubuntu 22.04</span>
-          </div>
-        </div>
-        <div class="spec-group">
-          <h4>AI Providers</h4>
-          <div class="spec-items">
-            <span class="spec-chip">OpenAI API</span>
-            <span class="spec-chip">Claude Code CLI</span>
-            <span class="spec-chip">Codex CLI</span>
-            <span class="spec-chip">Ollama</span>
-            <span class="spec-chip">llama.cpp</span>
-            <span class="spec-chip">LM Studio</span>
-          </div>
-        </div>
-        <div class="spec-group">
-          <h4>Native Apps</h4>
-          <div class="spec-items">
-            <span class="spec-chip">SwiftUI</span>
-            <span class="spec-chip">Virtualization.framework</span>
-            <span class="spec-chip">WSL2</span>
-            <span class="spec-chip">VirtioFS</span>
-          </div>
-        </div>
-        <div class="spec-group">
-          <h4>Protocols</h4>
-          <div class="spec-items">
-            <span class="spec-chip">MCP (Stdio/SSE/HTTP)</span>
-            <span class="spec-chip">P2P Swarm</span>
-            <span class="spec-chip">Mesh Networking</span>
-            <span class="spec-chip">xterm.js</span>
-          </div>
+          <p>Native OS-level virtualization. Lighter, faster, zero Docker dependency.</p>
         </div>
       </div>
     </div>
@@ -754,6 +844,7 @@ swift build -c release
             <h4>Product</h4>
             <a href="#features">Features</a>
             <a href="#agents">Agent System</a>
+            <a href="#deploy">Deploy</a>
             <a href="#security">Security</a>
             <a href="#getting-started">Download</a>
           </div>
