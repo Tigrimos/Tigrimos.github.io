@@ -38,7 +38,7 @@ const screenshotData = {
   },
   task: {
     id: 'ss-task',
-    caption: 'Minecraft Task Monitor — live pixel-art agents with speech bubbles, walking animations, and inter-agent interactions.'
+    caption: 'Task Manager — monitor running agent tasks with live status, call counts, and Minecraft-style visualization.'
   }
 };
 
