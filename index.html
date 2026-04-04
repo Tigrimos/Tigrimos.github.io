@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TigrimOS — Self-Hosted AI Agent Workspace</title>
+  <meta name="description" content="Deploy autonomous AI agent teams in-house. Secure sandbox, multi-agent orchestration, no Docker required. Built for developers, researchers, and enterprises.">
+  <link rel="icon" href="logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="logo.png" alt="TigrimOS" height="36">
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#features">Features</a>
+        <a href="#agents">Agent System</a>
+        <a href="#cli-coders">CLI Coders</a>
+        <a href="#security">Security</a>
+        <a href="#use-cases">Use Cases</a>
+        <a href="#getting-started">Get Started</a>
+      </div>
+      <div class="nav-actions">
+        <a href="https://github.com/Sompote/Tigrimos" class="btn btn-ghost" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a href="#getting-started" class="btn btn-primary">Download Free</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="grid-pattern"></div>
+      <div class="hero-glow"></div>
+    </div>
+    <div class="container">
+      <div class="hero-badge">
+        <span class="pulse-dot"></span>
+        v1.0.0 — Now Available for macOS & Windows
+      </div>
+      <h1 class="hero-title">
+        AI Agent<br>
+        <span class="gradient-text">Powerhouse</span>
+      </h1>
+      <p class="hero-subtitle">
+        Self-hosted AI workspace with parallel multi-agent orchestration, secure sandboxing, and a skill marketplace. Your data never leaves your machine. No Docker required.
+      </p>
+      <div class="hero-actions">
+        <a href="#getting-started" class="btn btn-primary btn-lg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download for Free
+        </a>
+        <a href="https://github.com/Sompote/Tigrimos" class="btn btn-outline btn-lg" target="_blank" rel="noopener">
+          View Source Code
+        </a>
+      </div>
+      <div class="hero-screenshots">
+        <div class="screenshot-tabs">
+          <button class="ss-tab active" data-screen="chat">AI Chat</button>
+          <button class="ss-tab" data-screen="agent">Agent Editor</button>
+          <button class="ss-tab" data-screen="task">Task Monitor</button>
+        </div>
+        <div class="screenshot-window">
+          <div class="window-chrome">
+            <span class="code-dot red"></span>
+            <span class="code-dot yellow"></span>
+            <span class="code-dot green"></span>
+            <span class="window-title">TigrimOS v1.0.0</span>
+          </div>
+          <div class="screenshot-container">
+            <img id="ss-chat" class="screenshot-img active" src="screen_chat.jpg" alt="TigrimOS AI Chat with tool-calling and React/Recharts visualizations">
+            <img id="ss-agent" class="screenshot-img" src="screen_agent.jpg" alt="TigrimOS Visual Agent Editor with drag-and-drop multi-agent design">
+            <img id="ss-task" class="screenshot-img" src="screen_task.png" alt="TigrimOS Minecraft Task Monitor with live pixel-art agents">
+          </div>
+          <div class="screenshot-caption" id="ssCaption">AI Chat with tool-calling — generates React/Recharts visualizations rendered in the output panel.</div>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">16</span>
+          <span class="stat-label">Built-in Tools</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">7</span>
+          <span class="stat-label">Agent Topologies</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">0</span>
+          <span class="stat-label">Cloud Dependencies</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">MIT</span>
+          <span class="stat-label">Licensed</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trusted By / For -->
+  <section class="social-proof">
+    <div class="container">
+      <p class="social-proof-label">Built for teams that demand control</p>
+      <div class="proof-tags">
+        <span class="proof-tag">Software Engineers</span>
+        <span class="proof-tag">AI Researchers</span>
+        <span class="proof-tag">DevOps Teams</span>
+        <span class="proof-tag">Enterprise IT</span>
+        <span class="proof-tag">Data Scientists</span>
+        <span class="proof-tag">Security-Conscious Orgs</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem / Solution -->
+  <section class="problem-solution">
+    <div class="container">
+      <div class="ps-grid">
+        <div class="ps-card ps-problem">
+          <div class="ps-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          </div>
+          <h3>The Problem</h3>
+          <p>Cloud-based AI tools send your proprietary code, research data, and business logic to third-party servers. You have zero control over data privacy, API costs keep climbing, and you're locked into a single provider with no way to optimize spend per task.</p>
+        </div>
+        <div class="ps-arrow">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+        <div class="ps-card ps-solution">
+          <div class="ps-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3>The TigrimOS Solution</h3>
+          <p>Run powerful AI agent teams entirely on your own machine. Control your costs by choosing the appropriate LLM engine for each agent — use a premium API for critical thinking and a free local model for routine tasks. Everything executes inside a secure Ubuntu sandbox, and your host filesystem is invisible to the AI unless you explicitly share a folder.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Save Your Budget -->
+  <section class="budget" id="budget">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Save Your Budget</span>
+        <h2>Flexible AI — Your Models, Your Cost</h2>
+        <p>Choose the AI provider that fits your budget. Use premium cloud APIs when you need top performance, or run completely free on local models.</p>
+      </div>
+      <div class="budget-grid">
+        <div class="budget-card budget-free">
+          <div class="budget-price">
+            <span class="price-tag">$0</span>
+            <span class="price-label">/ month</span>
+          </div>
+          <h3>Run Local LLMs</h3>
+          <p>Use open-source models on your own hardware. Zero API costs, zero data sharing, full privacy.</p>
+          <ul class="budget-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Ollama — run Llama, Mistral, Gemma locally
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              llama.cpp — lightweight C++ inference
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              LM Studio — GUI model manager
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Air-gapped — works offline
+            </li>
+          </ul>
+        </div>
+        <div class="budget-card budget-flex">
+          <div class="budget-popular">Most Flexible</div>
+          <div class="budget-price">
+            <span class="price-tag">Mix</span>
+            <span class="price-label">& match</span>
+          </div>
+          <h3>Hybrid — Best of Both</h3>
+          <p>Assign different providers per agent. Use a powerful cloud model for planning and a free local model for execution.</p>
+          <ul class="budget-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Orchestrator on GPT-4 / Claude Opus
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Worker agents on local Llama / Mistral
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Claude Code CLI + Codex CLI as coders
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Pay only for what you use
+            </li>
+          </ul>
+        </div>
+        <div class="budget-card budget-cloud">
+          <div class="budget-price">
+            <span class="price-tag">API</span>
+            <span class="price-label">pay-as-you-go</span>
+          </div>
+          <h3>Cloud APIs</h3>
+          <p>Connect any OpenAI-compatible API for maximum capability. Use your own keys — no markup, no middleman.</p>
+          <ul class="budget-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              OpenAI (GPT-4o, o3, o4-mini)
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Anthropic (Claude Sonnet, Opus)
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Any OpenAI-compatible endpoint
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Your keys — direct billing, no markup
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Capabilities</span>
+        <h2>Everything You Need to Run AI In-House</h2>
+        <p>A complete workspace where your agent teams build, reason, and execute — without ever leaving your infrastructure.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card feature-highlight">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Parallel Multi-Agent Orchestration</h3>
+          <p>7 orchestration topologies and 4 communication protocols. Agents work simultaneously on different parts of your problem — mesh networking, P2P swarm governance, and YAML-exportable workflows.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>16 Built-in Tools</h3>
+          <p>Web search, Python execution, React rendering, shell commands, file operations, skills, sub-agents — all sandboxed and ready to use out of the box.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+          </div>
+          <h3>Mix Any AI Provider</h3>
+          <p>Assign different models per agent — OpenAI-compatible APIs, Claude Code CLI, Codex CLI, or local LLMs via Ollama, llama.cpp, and LM Studio. One team, many brains.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
+          <h3>MCP Integration</h3>
+          <p>Connect any Model Context Protocol server — Stdio, SSE, or StreamableHTTP. Extend your agents' toolbox with external services, databases, and APIs.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+          </div>
+          <h3>Built-in Terminal</h3>
+          <p>Full xterm.js terminal with root access to the Ubuntu sandbox. Install packages, manage services, run CLI tools — all from the browser with color, tab completion, and cursor support.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h3>Skills & ClawHub Marketplace</h3>
+          <p>Install pre-built AI skills from the marketplace or create your own. Package domain-specific capabilities and share them across your organization.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Long-Running Stability</h3>
+          <p>Smart context compression, sliding window management, and checkpoint recovery. Your agents keep working through complex, multi-hour tasks without losing context.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Agent System -->
+  <section class="agents" id="agents">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Agent Architecture</span>
+        <h2>Swarm Intelligence, Your Way</h2>
+        <p>Design agent teams visually. Assign roles, providers, and communication patterns. Let them collaborate autonomously.</p>
+      </div>
+      <div class="agent-demo">
+        <div class="agent-topology">
+          <div class="topology-visual">
+            <div class="agent-node agent-orchestrator" data-label="Orchestrator">
+              <div class="agent-pulse"></div>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><line x1="12" y1="22" x2="12" y2="15.5"/><polyline points="22 8.5 12 15.5 2 8.5"/></svg>
+            </div>
+            <svg class="topology-lines" viewBox="0 0 400 300">
+              <line x1="200" y1="60" x2="80" y2="160" stroke="rgba(56,152,236,0.3)" stroke-width="2" stroke-dasharray="6,4"/>
+              <line x1="200" y1="60" x2="200" y2="180" stroke="rgba(56,152,236,0.3)" stroke-width="2" stroke-dasharray="6,4"/>
+              <line x1="200" y1="60" x2="320" y2="160" stroke="rgba(56,152,236,0.3)" stroke-width="2" stroke-dasharray="6,4"/>
+              <line x1="80" y1="160" x2="200" y2="180" stroke="rgba(56,152,236,0.15)" stroke-width="1" stroke-dasharray="4,4"/>
+              <line x1="200" y1="180" x2="320" y2="160" stroke="rgba(56,152,236,0.15)" stroke-width="1" stroke-dasharray="4,4"/>
+              <line x1="80" y1="160" x2="320" y2="160" stroke="rgba(56,152,236,0.15)" stroke-width="1" stroke-dasharray="4,4"/>
+            </svg>
+            <div class="agent-node agent-worker agent-w1" data-label="Coder">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <div class="agent-node agent-worker agent-w2" data-label="Researcher">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <div class="agent-node agent-worker agent-w3" data-label="Reviewer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="agent-info">
+          <div class="topology-selector">
+            <button class="topo-btn active" data-topo="mesh">Mesh</button>
+            <button class="topo-btn" data-topo="pipeline">Pipeline</button>
+            <button class="topo-btn" data-topo="star">Star</button>
+            <button class="topo-btn" data-topo="broadcast">Broadcast</button>
+          </div>
+          <h3>7 Orchestration Topologies</h3>
+          <p>From simple pipelines to full mesh P2P swarms. Each agent can use a different AI model, communicate through 4 protocols, and share state through a governance layer.</p>
+          <div class="agent-features">
+            <div class="af-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Visual drag-and-drop agent editor</span>
+            </div>
+            <div class="af-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>YAML export for version control</span>
+            </div>
+            <div class="af-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Live Minecraft-style task monitor</span>
+            </div>
+            <div class="af-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Mix OpenAI, Claude, Codex, local LLMs per agent</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLI Agent Coders -->
+  <section class="cli-coders" id="cli-coders">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Power Tools</span>
+        <h2>Claude Code & Codex as Agent Coders</h2>
+        <p>Assign industry-leading CLI tools as autonomous coders inside your agent swarm. Each runs its own tool loop — reading, editing, testing, and iterating on code independently.</p>
+      </div>
+      <div class="cli-grid">
+        <div class="cli-card">
+          <div class="cli-header">
+            <div class="cli-badge">Claude Code CLI</div>
+          </div>
+          <div class="cli-models">
+            <div class="cli-model"><code>claude-code</code><span>Default model</span></div>
+            <div class="cli-model"><code>claude-code:sonnet</code><span>Sonnet model</span></div>
+            <div class="cli-model"><code>claude-code:opus</code><span>Opus model</span></div>
+          </div>
+          <div class="cli-setup">
+            <div class="code-header">
+              <span class="code-dot red"></span>
+              <span class="code-dot yellow"></span>
+              <span class="code-dot green"></span>
+              <span class="code-title">Terminal setup</span>
+            </div>
+            <pre><code>npm i -g @anthropic-ai/claude-code
+claude login</code></pre>
+          </div>
+        </div>
+        <div class="cli-card">
+          <div class="cli-header">
+            <div class="cli-badge cli-badge-alt">Codex CLI</div>
+          </div>
+          <div class="cli-models">
+            <div class="cli-model"><code>codex</code><span>Default model</span></div>
+            <div class="cli-model"><code>codex:o3</code><span>o3 model</span></div>
+            <div class="cli-model"><code>codex:o4-mini</code><span>o4-mini model</span></div>
+          </div>
+          <div class="cli-setup">
+            <div class="code-header">
+              <span class="code-dot red"></span>
+              <span class="code-dot yellow"></span>
+              <span class="code-dot green"></span>
+              <span class="code-title">Terminal setup</span>
+            </div>
+            <pre><code>npm i -g @openai/codex
+codex login --device-auth</code></pre>
+          </div>
+        </div>
+      </div>
+      <p class="cli-note">All CLI tools run <strong>inside the sandbox</strong> — they cannot access your host system. Mix them in a multi-agent swarm: e.g. <code>claude-code:opus</code> for architecture + <code>codex:o3</code> for implementation.</p>
+    </div>
+  </section>
+
+  <!-- Security -->
+  <section class="security" id="security">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Zero Trust</span>
+        <h2>Security That's Not an Afterthought</h2>
+        <p>Every AI operation runs inside an isolated Ubuntu sandbox. Your host system is protected by default.</p>
+      </div>
+      <div class="security-grid">
+        <div class="sec-card">
+          <div class="sec-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h4>Full Sandbox Isolation</h4>
+          <p>macOS: Apple Virtualization.framework VM. Windows: WSL2 distro. AI code physically cannot access your host.</p>
+        </div>
+        <div class="sec-card">
+          <div class="sec-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h4>Invisible by Default</h4>
+          <p>Your files are completely hidden from the AI. Share only what you choose, with read-only as the default permission.</p>
+        </div>
+        <div class="sec-card">
+          <div class="sec-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+          </div>
+          <h4>NAT Networking</h4>
+          <p>The sandbox is isolated from your host network. No unexpected outbound connections from AI processes.</p>
+        </div>
+        <div class="sec-card">
+          <div class="sec-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+          </div>
+          <h4>No Docker Required</h4>
+          <p>Native OS-level virtualization on both platforms. Lighter, faster, and no dependency on Docker daemon or containers.</p>
+        </div>
+      </div>
+      <div class="security-table-wrap">
+        <table class="security-table">
+          <thead>
+            <tr>
+              <th>Security Layer</th>
+              <th>macOS</th>
+              <th>Windows</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sandbox</td>
+              <td>Ubuntu VM via Virtualization.framework</td>
+              <td>Ubuntu via WSL2</td>
+            </tr>
+            <tr>
+              <td>File System</td>
+              <td>Host files invisible by default</td>
+              <td>Host files invisible by default</td>
+            </tr>
+            <tr>
+              <td>Shared Folders</td>
+              <td>VirtioFS opt-in, read-only default</td>
+              <td>Symlink opt-in via app UI</td>
+            </tr>
+            <tr>
+              <td>Network</td>
+              <td>NAT — VM isolated</td>
+              <td>WSL2 NAT — isolated</td>
+            </tr>
+            <tr>
+              <td>Process Isolation</td>
+              <td>VM cannot see host processes</td>
+              <td>WSL2 isolated from Windows</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section class="use-cases" id="use-cases">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Who It's For</span>
+        <h2>Your Team, Supercharged</h2>
+        <p>Whether you're a solo developer, research lab, or enterprise IT — TigrimOS gives you AI agents that work on your terms.</p>
+      </div>
+      <div class="uc-grid">
+        <div class="uc-card">
+          <div class="uc-header">
+            <div class="uc-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3>Developers</h3>
+          </div>
+          <p>Deploy agent teams that write, test, and review code in parallel. Each agent specializes — one codes, one reviews, one writes tests. All running locally with your preferred models.</p>
+          <ul class="uc-list">
+            <li>Parallel code generation & review</li>
+            <li>Automated test writing</li>
+            <li>Multi-model agent pipelines</li>
+            <li>YAML-exportable workflows for CI/CD</li>
+          </ul>
+        </div>
+        <div class="uc-card">
+          <div class="uc-header">
+            <div class="uc-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <h3>Researchers</h3>
+          </div>
+          <p>Run data analysis, literature synthesis, and experiment automation with full Python/numpy/pandas support. Keep sensitive research data on your own hardware.</p>
+          <ul class="uc-list">
+            <li>Python with scientific stack included</li>
+            <li>Multi-agent literature review</li>
+            <li>Chart & visualization rendering</li>
+            <li>Checkpoint recovery for long experiments</li>
+          </ul>
+        </div>
+        <div class="uc-card">
+          <div class="uc-header">
+            <div class="uc-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h3>Enterprise & Business</h3>
+          </div>
+          <p>Deploy AI capabilities without sending proprietary data to third-party clouds. Full control over models, data flow, and compliance. MIT licensed — no vendor lock-in.</p>
+          <ul class="uc-list">
+            <li>Data sovereignty — everything stays in-house</li>
+            <li>Use local LLMs for air-gapped environments</li>
+            <li>Skills marketplace for org-wide sharing</li>
+            <li>Cross-platform: macOS & Windows teams</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">How It Works</span>
+        <h2>From Download to Agent Team in Minutes</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Download & Launch</h3>
+            <p>Grab the app for your platform. First launch provisions a secure Ubuntu sandbox automatically.</p>
+          </div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Connect Your Models</h3>
+            <p>Enter your API keys or point to local LLMs. Mix and match providers per agent — OpenAI, Claude, Ollama, llama.cpp.</p>
+          </div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Design Your Agent Team</h3>
+            <p>Use the visual editor to create agent workflows. Assign roles, topologies, and communication patterns.</p>
+          </div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Ship Faster</h3>
+            <p>Your agents collaborate in parallel — coding, reviewing, testing, and documenting — while you focus on what matters.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Specs -->
+  <section class="tech-specs">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Under the Hood</span>
+        <h2>Built on Solid Foundations</h2>
+      </div>
+      <div class="specs-grid">
+        <div class="spec-group">
+          <h4>Runtime</h4>
+          <div class="spec-items">
+            <span class="spec-chip">Node.js 20</span>
+            <span class="spec-chip">Python 3</span>
+            <span class="spec-chip">Fastify</span>
+            <span class="spec-chip">Ubuntu 22.04</span>
+          </div>
+        </div>
+        <div class="spec-group">
+          <h4>AI Providers</h4>
+          <div class="spec-items">
+            <span class="spec-chip">OpenAI API</span>
+            <span class="spec-chip">Claude Code CLI</span>
+            <span class="spec-chip">Codex CLI</span>
+            <span class="spec-chip">Ollama</span>
+            <span class="spec-chip">llama.cpp</span>
+            <span class="spec-chip">LM Studio</span>
+          </div>
+        </div>
+        <div class="spec-group">
+          <h4>Native Apps</h4>
+          <div class="spec-items">
+            <span class="spec-chip">SwiftUI</span>
+            <span class="spec-chip">Virtualization.framework</span>
+            <span class="spec-chip">WSL2</span>
+            <span class="spec-chip">VirtioFS</span>
+          </div>
+        </div>
+        <div class="spec-group">
+          <h4>Protocols</h4>
+          <div class="spec-items">
+            <span class="spec-chip">MCP (Stdio/SSE/HTTP)</span>
+            <span class="spec-chip">P2P Swarm</span>
+            <span class="spec-chip">Mesh Networking</span>
+            <span class="spec-chip">xterm.js</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Getting Started / Download -->
+  <section class="getting-started" id="getting-started">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Get Started</span>
+        <h2>Download TigrimOS</h2>
+        <p>Free and open source. MIT licensed. No account required.</p>
+      </div>
+      <div class="download-grid">
+        <div class="download-card">
+          <div class="dl-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          </div>
+          <h3>macOS</h3>
+          <p class="dl-subtitle">Apple Silicon & Intel</p>
+          <div class="dl-details">
+            <span>macOS 13.0+ (Ventura)</span>
+            <span>4 GB RAM, ~5 GB disk</span>
+            <span>Virtualization.framework</span>
+          </div>
+          <div class="dl-split-btns">
+            <a href="https://github.com/Sompote/Tigrimos/releases/download/v1.0.0/TigrimOS-v1.0.0-macOS-AppleSilicon.zip" class="btn btn-primary btn-block">Apple Silicon (M1-M4)</a>
+            <a href="https://github.com/Sompote/Tigrimos/releases/download/v1.0.0/TigrimOS-v1.0.0-macOS-Intel.zip" class="btn btn-outline btn-block">Intel</a>
+          </div>
+        </div>
+        <div class="download-card">
+          <div class="dl-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+          </div>
+          <h3>Windows</h3>
+          <p class="dl-subtitle">Windows 10/11</p>
+          <div class="dl-details">
+            <span>Windows 10 v2004+</span>
+            <span>4 GB RAM, ~5 GB disk</span>
+            <span>WSL2 sandbox</span>
+          </div>
+          <a href="https://github.com/Sompote/Tigrimos/releases/download/v1.0.0/TigrimOS-v1.0.0-Windows.zip" class="btn btn-primary btn-block">Download for Windows</a>
+        </div>
+        <div class="download-card dl-source">
+          <div class="dl-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </div>
+          <h3>Build from Source</h3>
+          <p class="dl-subtitle">MIT Licensed</p>
+          <div class="dl-details">
+            <span>Full source code</span>
+            <span>Swift + Node.js</span>
+            <span>Community contributions welcome</span>
+          </div>
+          <a href="https://github.com/Sompote/Tigrimos" class="btn btn-outline btn-block" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
+      </div>
+      <div class="quick-start-code">
+        <div class="code-header">
+          <span class="code-dot red"></span>
+          <span class="code-dot yellow"></span>
+          <span class="code-dot green"></span>
+          <span class="code-title">Build from source</span>
+        </div>
+        <pre><code><span class="code-comment"># Clone the repo</span>
+git clone https://github.com/Sompote/Tigrimos.git
+<span class="code-keyword">cd</span> TigrimOS
+
+<span class="code-comment"># Install qemu (macOS)</span>
+brew install qemu
+
+<span class="code-comment"># Build</span>
+swift build -c release
+./Scripts/build.sh silicon  <span class="code-comment"># or: intel, all</span></code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta-inner">
+        <h2>Stop Sending Your Data to the Cloud</h2>
+        <p>Deploy autonomous AI agent teams that run entirely on your infrastructure. Free, open source, and secure by design.</p>
+        <div class="cta-actions">
+          <a href="#getting-started" class="btn btn-white btn-lg">Get TigrimOS Free</a>
+          <a href="https://github.com/Sompote/Tigrimos" class="btn btn-ghost-white btn-lg" target="_blank" rel="noopener">Star on GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="logo.png" alt="TigrimOS" height="32">
+          <p>Self-hosted AI agent workspace.<br>Your data. Your models. Your agents.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="#features">Features</a>
+            <a href="#agents">Agent System</a>
+            <a href="#security">Security</a>
+            <a href="#getting-started">Download</a>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <a href="https://github.com/Sompote/Tigrimos" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://github.com/Sompote/Tigrimos/blob/main/docs/TECHNICAL.md" target="_blank" rel="noopener">Documentation</a>
+            <a href="https://github.com/Sompote/Tigrimos/blob/main/tiger_cowork/docs/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a>
+            <a href="https://github.com/Sompote/Tigrimos/blob/main/LICENSE" target="_blank" rel="noopener">MIT License</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TigrimOS. Open source under MIT License.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
