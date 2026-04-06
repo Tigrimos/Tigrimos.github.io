@@ -1237,17 +1237,17 @@ img { max-width: 100%; display: block; }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   margin-bottom: 48px;
 }
 
 .service-card {
-  padding: 36px;
+  padding: 28px;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  text-align: left;
+  text-align: center;
   transition: all var(--transition);
 }
 
@@ -1258,12 +1258,12 @@ img { max-width: 100%; display: block; }
 }
 
 .service-icon {
-  width: 56px;
-  height: 56px;
+  width: 52px;
+  height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 0 16px;
+  margin: 0 auto 14px;
   background: rgba(56,152,236,0.08);
   border-radius: 14px;
   color: var(--accent);
@@ -1305,6 +1305,10 @@ img { max-width: 100%; display: block; }
 
 .services-email a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
