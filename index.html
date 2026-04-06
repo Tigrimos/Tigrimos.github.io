@@ -21,6 +21,7 @@
       <div class="nav-links" id="navLinks">
         <a href="#features">Features</a>
         <a href="#agents">Agent System</a>
+        <a href="#remote-agent">Remote Agents</a>
         <a href="#deploy">Deploy</a>
         <a href="#security">Security</a>
         <a href="#getting-started">Get Started</a>
@@ -703,6 +704,147 @@
     </div>
   </section>
 
+  <!-- Cross Machine Remote Agent -->
+  <section class="remote-agent" id="remote-agent">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Distributed Intelligence</span>
+        <h2>Cross Machine Remote Agents</h2>
+        <p>Extend your agent swarm beyond a single machine. TigrimOS instances connect and collaborate across your network — LAN, VPN, or WAN — via a simple REST API with Bearer token authentication.</p>
+      </div>
+
+      <!-- Architecture diagram -->
+      <div class="remote-diagram-wrap">
+        <svg class="remote-diagram" viewBox="0 0 800 380">
+          <defs>
+            <marker id="arrow-remote" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="rgba(56,152,236,0.6)"/></marker>
+            <marker id="arrow-remote-green" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="rgba(34,197,94,0.6)"/></marker>
+          </defs>
+
+          <!-- Machine 1 -->
+          <rect x="30" y="50" width="200" height="200" rx="16" fill="rgba(56,152,236,0.04)" stroke="rgba(56,152,236,0.2)" stroke-width="1.5" stroke-dasharray="6,4"/>
+          <text x="130" y="80" text-anchor="middle" fill="var(--accent)" font-size="11" font-weight="700" font-family="Inter,sans-serif" letter-spacing="0.05em">MACHINE A</text>
+          <text x="130" y="96" text-anchor="middle" fill="var(--text-dim)" font-size="9" font-family="Inter,sans-serif">192.168.1.10</text>
+          <circle cx="80" cy="150" r="22" fill="rgba(56,152,236,0.12)" stroke="var(--accent)" stroke-width="2"/>
+          <text x="80" y="154" text-anchor="middle" fill="var(--accent)" font-size="10" font-weight="700" font-family="Inter,sans-serif">Coder</text>
+          <circle cx="180" cy="150" r="22" fill="rgba(56,152,236,0.08)" stroke="rgba(56,152,236,0.4)" stroke-width="1.5"/>
+          <text x="180" y="154" text-anchor="middle" fill="var(--accent-light)" font-size="10" font-weight="600" font-family="Inter,sans-serif">Tester</text>
+          <line x1="102" y1="150" x2="155" y2="150" stroke="rgba(56,152,236,0.3)" stroke-width="1.5" stroke-dasharray="4,3"/>
+          <!-- Local LLM label -->
+          <rect x="65" y="195" width="130" height="22" rx="6" fill="rgba(34,197,94,0.08)" stroke="rgba(34,197,94,0.2)" stroke-width="1"/>
+          <text x="130" y="210" text-anchor="middle" fill="var(--success)" font-size="8" font-weight="600" font-family="Inter,sans-serif">LOCAL LLM (Ollama)</text>
+
+          <!-- Machine 2 -->
+          <rect x="300" y="20" width="200" height="160" rx="16" fill="rgba(129,140,248,0.04)" stroke="rgba(129,140,248,0.2)" stroke-width="1.5" stroke-dasharray="6,4"/>
+          <text x="400" y="50" text-anchor="middle" fill="var(--gradient-end)" font-size="11" font-weight="700" font-family="Inter,sans-serif" letter-spacing="0.05em">MACHINE B</text>
+          <text x="400" y="66" text-anchor="middle" fill="var(--text-dim)" font-size="9" font-family="Inter,sans-serif">192.168.1.20</text>
+          <circle cx="350" cy="120" r="22" fill="rgba(129,140,248,0.12)" stroke="var(--gradient-end)" stroke-width="2"/>
+          <text x="350" y="116" text-anchor="middle" fill="var(--gradient-end)" font-size="9" font-weight="700" font-family="Inter,sans-serif">Data</text>
+          <text x="350" y="128" text-anchor="middle" fill="var(--gradient-end)" font-size="9" font-weight="700" font-family="Inter,sans-serif">Analyst</text>
+          <circle cx="450" cy="120" r="22" fill="rgba(129,140,248,0.08)" stroke="rgba(129,140,248,0.4)" stroke-width="1.5"/>
+          <text x="450" y="124" text-anchor="middle" fill="rgba(129,140,248,0.8)" font-size="10" font-weight="600" font-family="Inter,sans-serif">Writer</text>
+
+          <!-- Machine 3 -->
+          <rect x="300" y="210" width="200" height="150" rx="16" fill="rgba(34,197,94,0.04)" stroke="rgba(34,197,94,0.2)" stroke-width="1.5" stroke-dasharray="6,4"/>
+          <text x="400" y="240" text-anchor="middle" fill="var(--success)" font-size="11" font-weight="700" font-family="Inter,sans-serif" letter-spacing="0.05em">MACHINE C</text>
+          <text x="400" y="256" text-anchor="middle" fill="var(--text-dim)" font-size="9" font-family="Inter,sans-serif">10.0.0.5 (VPN)</text>
+          <circle cx="400" cy="310" r="22" fill="rgba(34,197,94,0.12)" stroke="var(--success)" stroke-width="2"/>
+          <text x="400" y="306" text-anchor="middle" fill="var(--success)" font-size="9" font-weight="700" font-family="Inter,sans-serif">GPU</text>
+          <text x="400" y="318" text-anchor="middle" fill="var(--success)" font-size="9" font-weight="700" font-family="Inter,sans-serif">Worker</text>
+
+          <!-- Machine 4 — Cloud -->
+          <rect x="570" y="80" width="200" height="200" rx="16" fill="rgba(239,68,68,0.03)" stroke="rgba(239,68,68,0.15)" stroke-width="1.5" stroke-dasharray="6,4"/>
+          <text x="670" y="110" text-anchor="middle" fill="var(--danger)" font-size="11" font-weight="700" font-family="Inter,sans-serif" letter-spacing="0.05em">MACHINE D</text>
+          <text x="670" y="126" text-anchor="middle" fill="var(--text-dim)" font-size="9" font-family="Inter,sans-serif">cloud-gpu.example.com</text>
+          <circle cx="620" cy="190" r="22" fill="rgba(239,68,68,0.08)" stroke="rgba(239,68,68,0.4)" stroke-width="1.5"/>
+          <text x="620" y="186" text-anchor="middle" fill="rgba(239,68,68,0.8)" font-size="9" font-weight="600" font-family="Inter,sans-serif">Fine-</text>
+          <text x="620" y="198" text-anchor="middle" fill="rgba(239,68,68,0.8)" font-size="9" font-weight="600" font-family="Inter,sans-serif">Tuner</text>
+          <circle cx="720" cy="190" r="22" fill="rgba(239,68,68,0.08)" stroke="rgba(239,68,68,0.4)" stroke-width="1.5"/>
+          <text x="720" y="186" text-anchor="middle" fill="rgba(239,68,68,0.8)" font-size="9" font-weight="600" font-family="Inter,sans-serif">Deploy</text>
+          <text x="720" y="198" text-anchor="middle" fill="rgba(239,68,68,0.8)" font-size="9" font-weight="600" font-family="Inter,sans-serif">Agent</text>
+          <!-- Cloud API label -->
+          <rect x="605" y="235" width="130" height="22" rx="6" fill="rgba(239,68,68,0.06)" stroke="rgba(239,68,68,0.15)" stroke-width="1"/>
+          <text x="670" y="250" text-anchor="middle" fill="rgba(239,68,68,0.7)" font-size="8" font-weight="600" font-family="Inter,sans-serif">CLOUD API (OpenAI)</text>
+
+          <!-- Network connections -->
+          <line x1="230" y1="140" x2="328" y2="120" stroke="rgba(56,152,236,0.4)" stroke-width="2" marker-end="url(#arrow-remote)"/>
+          <line x1="230" y1="170" x2="378" y2="290" stroke="rgba(34,197,94,0.4)" stroke-width="2" marker-end="url(#arrow-remote-green)"/>
+          <line x1="500" y1="120" x2="598" y2="178" stroke="rgba(56,152,236,0.3)" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow-remote)"/>
+          <line x1="422" y1="310" x2="598" y2="200" stroke="rgba(34,197,94,0.3)" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow-remote-green)"/>
+
+          <!-- Network label -->
+          <rect x="283" y="180" width="134" height="22" rx="6" fill="rgba(56,152,236,0.06)" stroke="rgba(56,152,236,0.15)" stroke-width="1"/>
+          <text x="350" y="195" text-anchor="middle" fill="var(--accent)" font-size="8" font-weight="700" font-family="Inter,sans-serif">HTTP REST + BEARER TOKEN</text>
+
+          <!-- Caption -->
+          <text x="400" y="375" text-anchor="middle" fill="var(--text-muted)" font-size="10" font-weight="600" font-family="Inter,sans-serif" letter-spacing="0.05em">AGENTS SPAN MACHINES — EACH NODE RUNS ITS OWN SANDBOX &amp; LLM</text>
+        </svg>
+      </div>
+
+      <!-- Feature cards -->
+      <div class="remote-grid">
+        <div class="remote-card">
+          <div class="remote-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>Connect Any Instance</h3>
+          <p>Point any TigrimOS instance at another over the network. Submit tasks via REST API with a Bearer token — works across LAN, VPN, or public internet.</p>
+        </div>
+        <div class="remote-card">
+          <div class="remote-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h3>Token-Based Security</h3>
+          <p>Each instance generates a unique remote token. All cross-machine calls are authenticated — no complex certificates, just enable Remote Mode and share the token.</p>
+        </div>
+        <div class="remote-card">
+          <div class="remote-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+          </div>
+          <h3>Heterogeneous Hardware</h3>
+          <p>Mix Mac, Linux, and Windows nodes freely. GPU-heavy inference on a rack server, coding agents on a laptop — orchestrated as one swarm.</p>
+        </div>
+        <div class="remote-card">
+          <div class="remote-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Real-Time Progress</h3>
+          <p>Poll running tasks for live status updates, progress logs, and elapsed time. Build dashboards or automation scripts on top of the simple polling API.</p>
+        </div>
+        <div class="remote-card">
+          <div class="remote-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Full Agent Power Remotely</h3>
+          <p>Remote tasks run through the same multi-agent orchestration as local tasks. All 7 topologies, 16 tools, and model configs are available across machines.</p>
+        </div>
+        <div class="remote-card">
+          <div class="remote-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Sandbox Isolation</h3>
+          <p>Remote tasks execute inside the same sandboxed environment as local tasks. The remote caller never gets host access — only task results come back.</p>
+        </div>
+      </div>
+
+      <!-- How it works steps -->
+      <div class="remote-steps">
+        <div class="deploy-step">
+          <div class="step-number">1</div>
+          <span>Enable <strong>Remote Mode</strong> in TigrimOS Settings and copy the generated token</span>
+        </div>
+        <div class="deploy-step">
+          <div class="step-number">2</div>
+          <span>Submit tasks from any client — <code>POST /api/remote/task</code> with your Bearer token</span>
+        </div>
+        <div class="deploy-step">
+          <div class="step-number">3</div>
+          <span>Poll for results — get live progress, status, and final output</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Security -->
   <section class="security" id="security">
     <div class="container">
@@ -844,6 +986,7 @@ swift build -c release
             <h4>Product</h4>
             <a href="#features">Features</a>
             <a href="#agents">Agent System</a>
+            <a href="#remote-agent">Remote Agents</a>
             <a href="#deploy">Deploy</a>
             <a href="#security">Security</a>
             <a href="#getting-started">Download</a>

@@ -128,7 +128,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Apply to cards and sections
-document.querySelectorAll('.feature-card, .sec-card, .deploy-card, .download-card, .deploy-step, .budget-card, .pain-row').forEach(el => {
+document.querySelectorAll('.feature-card, .sec-card, .deploy-card, .download-card, .deploy-step, .budget-card, .pain-row, .remote-card').forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(20px)';
   el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
@@ -136,7 +136,7 @@ document.querySelectorAll('.feature-card, .sec-card, .deploy-card, .download-car
 });
 
 // Stagger animation for grids
-document.querySelectorAll('.features-grid, .security-grid, .deploy-grid, .download-grid, .budget-grid, .pain-list').forEach(grid => {
+document.querySelectorAll('.features-grid, .security-grid, .deploy-grid, .download-grid, .budget-grid, .pain-list, .remote-grid').forEach(grid => {
   const children = grid.children;
   Array.from(children).forEach((child, i) => {
     child.style.transitionDelay = `${i * 0.08}s`;
