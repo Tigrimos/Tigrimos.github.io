@@ -600,6 +600,24 @@ img { max-width: 100%; display: block; }
   padding: 100px 0;
 }
 
+.comparison {
+  padding: 100px 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(255, 107, 53, 0.03) 50%, transparent 100%);
+}
+
+.comparison-image {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.comparison-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
 .features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
