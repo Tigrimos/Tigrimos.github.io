@@ -39,6 +39,10 @@ const screenshotData = {
   task: {
     id: 'ss-task',
     caption: 'Task Manager — monitor running agent tasks with live status, call counts, and Minecraft-style visualization.'
+  },
+  diagram: {
+    id: 'ss-diagram',
+    caption: 'Live Agent Diagram — real-time visualization of orchestrator and sub-agents with status, tool calls, and communication edges.'
   }
 };
 
