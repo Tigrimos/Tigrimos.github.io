@@ -6,7 +6,7 @@
         <title>TigrimOS — Self-Hosted AI Agent Workspace</title>
         <meta
             name="description"
-            content="Deploy autonomous AI agent teams in-house with cross-machine remote agents. Secure sandbox, multi-agent orchestration, skill marketplace, no Docker required. Built for developers, researchers, and enterprises."
+            content="Deploy autonomous AI agent teams in-house with cross-machine remote agents. Self-improving agents via human feedback auto-skill creation. Secure sandbox, multi-agent orchestration, skill marketplace, no Docker required. Built for developers, researchers, and enterprises."
         />
         <link rel="icon" href="logo.png" type="image/png" />
         <link
@@ -74,7 +74,7 @@
             <div class="container">
                 <div class="hero-badge">
                     <span class="pulse-dot"></span>
-                    v1.3.1 — Now Available for macOS & Windows
+                    v1.4.0 — Now Available for macOS & Windows
                 </div>
                 <h1 class="hero-title">
                     AI Agent<br />
@@ -83,9 +83,11 @@
                 <p class="hero-subtitle">
                     Self-hosted AI desktop application with parallel multi-agent
                     orchestration, cross-machine remote agents, secure
-                    sandboxing, and a skill marketplace. Deploy agent swarms
-                    across your network — your data never leaves your
-                    infrastructure. No Docker required.
+                    sandboxing, and a skill marketplace. Agents self-improve
+                    during every run — human feedback auto-creates new skills
+                    so your agents get smarter with each interaction. Deploy
+                    agent swarms across your network — your data never leaves
+                    your infrastructure. No Docker required.
                 </p>
                 <div class="hero-actions">
                     <a href="#getting-started" class="btn btn-primary btn-lg">
@@ -118,7 +120,10 @@
                 </div>
                 <div class="hero-screenshots">
                     <div class="screenshot-tabs">
-                        <button class="ss-tab active" data-screen="task">
+                        <button class="ss-tab active" data-screen="diagram">
+                            Live Agent Diagram
+                        </button>
+                        <button class="ss-tab" data-screen="task">
                             Task Manager
                         </button>
                         <button class="ss-tab" data-screen="chat">
@@ -127,8 +132,8 @@
                         <button class="ss-tab" data-screen="agent">
                             Agent Editor
                         </button>
-                        <button class="ss-tab" data-screen="diagram">
-                            Live Agent Diagram
+                        <button class="ss-tab" data-screen="feedback">
+                            Human Feedback
                         </button>
                     </div>
                     <div class="screenshot-window">
@@ -136,12 +141,12 @@
                             <span class="code-dot red"></span>
                             <span class="code-dot yellow"></span>
                             <span class="code-dot green"></span>
-                            <span class="window-title">TigrimOS v1.3.1</span>
+                            <span class="window-title">TigrimOS v1.4.0</span>
                         </div>
                         <div class="screenshot-container">
                             <img
                                 id="ss-task"
-                                class="screenshot-img active"
+                                class="screenshot-img"
                                 src="task-monitor.png"
                                 alt="TigrimOS Task Manager with running agent tasks and Minecraft visualization"
                             />
@@ -159,15 +164,21 @@
                             />
                             <img
                                 id="ss-diagram"
-                                class="screenshot-img"
+                                class="screenshot-img active"
                                 src="screen_agent_diagram.png"
                                 alt="TigrimOS Live Agent Diagram showing orchestrator with active sub-agents and real-time status"
                             />
+                            <img
+                                id="ss-feedback"
+                                class="screenshot-img"
+                                src="screen_human_feedback.png"
+                                alt="TigrimOS Human Feedback auto-creating skills — agent improves itself during run"
+                            />
                         </div>
                         <div class="screenshot-caption" id="ssCaption">
-                            Task Manager — monitor running agent tasks with live
-                            status, call counts, and Minecraft-style
-                            visualization.
+                            Live Agent Diagram — real-time visualization of
+                            orchestrator and sub-agents with status, tool calls,
+                            and communication edges.
                         </div>
                     </div>
                 </div>
@@ -856,6 +867,28 @@
                             create your own. Package domain-specific
                             capabilities and share them across your
                             organization.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg
+                                width="28"
+                                height="28"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z" />
+                                <path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
+                            </svg>
+                        </div>
+                        <h3>Human Feedback Auto-Create Skill</h3>
+                        <p>
+                            Rate agent responses with thumbs up/down and the
+                            agent automatically creates new skills from your
+                            feedback. The agent improves itself during the run
+                            — no retraining needed.
                         </p>
                     </div>
                     <div class="feature-card">
@@ -3590,12 +3623,12 @@
                         </div>
                         <div class="dl-split-btns">
                             <a
-                                href="https://github.com/Sompote/Tigrimos/releases/download/v1.3.1/TigrimOS-v1.3.1-macOS-AppleSilicon.zip"
+                                href="https://github.com/Sompote/Tigrimos/releases/download/v1.4.0/TigrimOS-v1.4.0-macOS-AppleSilicon.zip"
                                 class="btn btn-primary btn-block"
                                 >Apple Silicon (M1-M4)</a
                             >
                             <a
-                                href="https://github.com/Sompote/Tigrimos/releases/download/v1.3.1/TigrimOS-v1.3.1-macOS-Intel.zip"
+                                href="https://github.com/Sompote/Tigrimos/releases/download/v1.4.0/TigrimOS-v1.4.0-macOS-Intel.zip"
                                 class="btn btn-outline btn-block"
                                 >Intel</a
                             >
@@ -3622,7 +3655,7 @@
                             <span>WSL2 sandbox</span>
                         </div>
                         <a
-                            href="https://github.com/Sompote/Tigrimos/releases/download/v1.3.1/TigrimOS-v1.3.1-Windows.zip"
+                            href="https://github.com/Sompote/Tigrimos/releases/download/v1.4.0/TigrimOS-v1.4.0-Windows.zip"
                             class="btn btn-primary btn-block"
                             >Download for Windows</a
                         >

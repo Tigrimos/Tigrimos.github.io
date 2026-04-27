@@ -43,6 +43,10 @@ const screenshotData = {
   diagram: {
     id: 'ss-diagram',
     caption: 'Live Agent Diagram — real-time visualization of orchestrator and sub-agents with status, tool calls, and communication edges.'
+  },
+  feedback: {
+    id: 'ss-feedback',
+    caption: 'Human Feedback — rate agent responses with thumbs up/down to auto-create skills. The agent improves itself during the run.'
   }
 };
 
